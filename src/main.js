@@ -41,6 +41,7 @@ async function handleSearch(event) {
     if (data.hits.length === 0) {
       iziToast.error({
         message: 'Sorry, there are no images matching your search query. Please try again!',
+        position: 'topRight',
       });
       hideLoader();
       return;
@@ -52,7 +53,7 @@ async function handleSearch(event) {
       showLoadMoreButton();
     }
   } catch (error) {
-    iziToast.error({ message: 'Something went wrong!' });
+    iziToast.error({ message: 'Something went wrong!', position: 'topRight' });
   } finally {
     hideLoader();
   }
